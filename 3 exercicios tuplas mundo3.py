@@ -1,0 +1,10 @@
+import random
+nun1 = random.randint(1,100)
+nun2 = random.randint(1,50)
+nun3 = random.randint(1,40)
+nun4 = random.randint(1,30)
+nun5 = random.randint(1,20)
+numeros = (nun1,nun2,nun3,nun4,nun5)
+maior = max(numeros)
+menor = min(numeros)
+print(f'dos numeros {numeros}\n maior: {maior}\n menor: {menor}')
