@@ -1,0 +1,279 @@
+#tabela = [['file de frango', 31.5, 3.57,2 ],['ovo',13,8.9,],['arroz integral',2.6,1,25.8,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos ',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+import math
+imformacao1 = 'Umidade Energia Proteína Lipídeos Colesterol idrato Alimentar Cinzas Cálcio Magnésio '
+alimentos = [[' Biscoito-doce-maisena 3,2 443 1853 8,1 12,0 NA 75,2 2,1 1,5 54 37 ']]
+imformacao = 'Composição de alimentos por 100 gramas'
+
+alimentos=list()
+juster_de_carbo2_copia = 0
+atividade = 't'
+dieta_defora = list()
+objetivo =''
+print('================== Se você esta usando esse codigo é porque é meu amigo (LUIZ) sinta-se avontade==============')
+nome = input('nome: ' ).upper()
+print(f'Bem Vindo {nome} ' )
+peso = int (input('Peso:'))
+add_dieta = input('Deseja adicionar seu proprio alimento? [S/N] ')
+if add_dieta == 's':
+    dieta_defora.append(input('Nome'))
+    dieta_defora.append(float(input('proteina (quantidade de 100g ( 100g))')))
+    dieta_defora.append('l')
+    dieta_defora.append(float (input('carboidrato (quantidade de 100g (100g))')))
+    tabela = [['file de frango', 31.5, 3.57 ],['ovo',13,8.9,1.2],['arroz integral',2.6,1,40,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+
+    if tabela[10][-1][3] == 0:
+       tabela[10][-1][3] = 1
+
+tabela = [['file de frango', 31.5, 3.57,2 ],['ovo',13,8.9,],['arroz integral',2.6,1,25.8,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos ',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+
+
+
+tabela = list()
+permissao_usar = False
+atividade_secundaria = list()
+alimento1 = list()
+macro_carbo_cutting_novo = list()
+macro_proteina_cutting_novo = list()
+while atividade != '1' and atividade !='2' and atividade !='3':
+    atividade = input('([1]=POUCA ATIVIDADE FISICA)\n([2]=ATIVIDADE FISICA MODERADA)\n([3]=MUITA ATIVIDADE FISICA.)')
+        
+while objetivo != '1' and objetivo != '2':
+    objetivo = input('\n[1]BULKING \n [2] CUTTING')
+for c in range(0,3):
+    tabela = [['file de frango', 30, 3.57, 2 ],['ovo',13,8.9,1.2],['arroz integral',2.6,1,25.8,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos crua',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+
+    selecao_alimentos =  input(f'\n ATENÇÃO: OS DOIS PRIMEIROS ALIMENTOS SELECIONADOS DEVEM SER O CARBOIDRATO DA SUA DIETA. \n O TERCEIRO SERA A PROTEINA.\n alimentos: \n FRANGO[1]\n OVO[2]\n ARROZ INTEGRAL[3]\n ARROZ TIPO1[4]\n ARROZ TIPO2[5]\n AVEIA EM FLOCOS[6]\n FEIJÃO PRETO COZIDO[7]\n MACARRÃO[8]\n BROCOLIS[9] \n BANANA DA TERRA[10] \n {tabela[10][-1][0]}[11] ')
+    atividade_secundaria.append(selecao_alimentos[:])
+    if atividade_secundaria[-1] =='1'or atividade_secundaria[-1] =='2' or atividade_secundaria[-1] =='3' or atividade_secundaria[-1] =='4' or atividade_secundaria[-1] =='5' or atividade_secundaria[-1] =='6' or atividade_secundaria[-1] =='7' or atividade_secundaria[-1] =='8' or atividade_secundaria[-1] =='9' or atividade_secundaria[-1] =='10' or atividade_secundaria[-1] =='11':
+        tabela = [['file de frango', 30, 3.57, 2 ],['ovo',13,8.9,1.2],['arroz integral',2.6,1,25.8,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos crua',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+        atividade_secundaria.append(selecao_alimentos[:])
+
+        if atividade_secundaria[-1] =='1':
+            alimento1.append(tabela[0])  
+        if atividade_secundaria[-1] =='2':
+            alimento1.append(tabela[1])  
+        if atividade_secundaria[-1] =='3':
+            alimento1.append(tabela[2])
+        if atividade_secundaria[-1] =='4':
+            alimento1.append(tabela[3])
+        if atividade_secundaria[-1] =='5':
+            alimento1.append(tabela[4])
+        if atividade_secundaria[-1]=='6':
+            alimento1.append(tabela[5])
+        if atividade_secundaria[-1] =='7':
+            alimento1.append(tabela[6])
+        if atividade_secundaria[-1]=='8':
+            alimento1.append(tabela[7])
+        if atividade_secundaria[-1] =='9':
+            alimento1.append(tabela[8])
+        if atividade_secundaria[-1]=='10':
+            alimento1.append(tabela[9])
+        if atividade_secundaria[-1] =='11':
+            alimento1.append(tabela[10][-1])
+            print(tabela[10])
+        alimentos.append(alimento1[:])
+        alimento1.clear()  
+        #print('Selecione outro alimento.')
+        
+macro_proteina_bulking = peso * 2
+macro_gordura_bulking = peso * 1 
+if atividade =='1':
+    macro_carbo_bulking = peso * 4
+    macro_carbo_cutting = peso * 2
+    porcentagem_carboidratos = ''
+if atividade =='2':
+    macro_carbo_bulking = peso * 5
+    macro_carbo_cutting = peso * 2.5
+if atividade == '3':
+    macro_carbo_bulking = peso * 6
+    macro_carbo_cutting = peso * 2.8
+if objetivo =='1':
+   print(f'Seu macro: \n PROTEINA: {macro_proteina_bulking}\n GORDURA: {macro_gordura_bulking} \n CARBOIDRATOS: {macro_carbo_bulking:.2f} \n')
+   print(f'Caso em uma semana você não ganhe nenhum peso. use essa quantidade de carboidratos: {macro_carbo_bulking + peso * 0.5 }')
+conta = (peso * 0.2) - macro_carbo_cutting 
+if objetivo =='2':
+   print(f'CUTTING \n Seu macro: \n PROTEINA: {macro_proteina_bulking}\n GORDURA: {macro_gordura_bulking} \n CARBOIDRATOS: {macro_carbo_cutting:.2f} \n')
+tabela = [['file de frango', 31.5, 3.57 ],['ovo',13,8.9,1.2],['arroz integral',2.6,1,40,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+if selecao_alimentos =='1' or selecao_alimentos =='2' or selecao_alimentos =='3' or selecao_alimentos =='4' or selecao_alimentos =='5' or selecao_alimentos =='6' or selecao_alimentos =='7' or selecao_alimentos =='8' or selecao_alimentos =='9' or selecao_alimentos =='10' or selecao_alimentos =='11':
+    tabela = [['file de frango', 31.5, 3.57 ],['ovo',13,8.9,1.2],['arroz integral',2.6,1,40,2.7],['arroz tipo1',2.5,0.2,28.1,1.6],['arroz tipo2',2.6,0.4,28.2,1.1],['aveia flocos',13.9,8.5,66.6,9.1],['feijao preto cozido',4.5,0.5,14,8.4],['Macarrão',10,1.3,77.9,2.9],['brocolis',2.1,0.5,4.4,3.4],['banana da terra',1.4,0.2,33.7,1.5],[dieta_defora]]
+   
+    if selecao_alimentos =='1':
+        proteina_usar = tabela[0][1]
+        alimento_selecionado = tabela[0][0]
+        carboidratos_usar = 2
+    elif selecao_alimentos =='2':
+        proteina_usar = tabela[1][1]
+        proteina_secundaria = (proteina_usar / 50)
+        permissao_usar = True
+        alimento_selecionado = tabela[1][0]
+        carboidratos_usar = tabela[1][3]
+
+    elif selecao_alimentos =='3':
+         proteina_usar = tabela[2][1]
+         alimento_selecionado = tabela[2][0]
+         carboidratos_usar = tabela[2][3]
+    elif selecao_alimentos =='4':
+        proteina_usar = tabela[3][1]
+        alimento_selecionado = tabela[3][0]
+        carboidratos_usar = tabela[3][3]
+
+    elif selecao_alimentos =='5':
+        proteina_usar = tabela[4][1]
+        alimento_selecionado = tabela[4][0]
+        carboidratos_usar = tabela[4][3]
+    elif selecao_alimentos =='6':
+        proteina_usar = tabela[5][1]
+        alimento_selecionado =tabela[5][0]
+        carboidratos_usar = tabela[5][3]
+    elif selecao_alimentos =='7':
+        proteina_usar = tabela[6][1]
+        alimento_selecionado = tabela[6][0]
+        carboidratos_usar = tabela[6][3]
+
+    elif selecao_alimentos =='8':
+        proteina_usar=tabela[7][1]
+        alimento_selecionado=tabela[7][0]
+        carboidratos_usar = tabela[7][3]
+
+    elif selecao_alimentos =='9':
+        proteina_usar=tabela[8][1]
+        alimento_selecionado = tabela[8][0]
+        carboidratos_usar = tabela[8][3]
+
+    elif selecao_alimentos =='10':
+        proteina_usar =tabela[9][1]
+        alimento_selecionado = tabela[9][0]
+        carboidratos_usar = tabela[9][3]
+    elif selecao_alimentos =='11':
+        proteina_usar=tabela[10][-1][1]
+        alimento_selecionado=tabela[10][-1][0]
+        carboidratos_usar=tabela[10][-1][3]
+if objetivo =='2':
+    macro_carbo_cutting_novo.append(macro_carbo_cutting)
+    macro_carbo_30porcento = (macro_carbo_cutting / 100) * 40
+    macro_comer2 = (macro_carbo_30porcento / (alimentos)[0][-1][3]) * 100
+    macro_carbo_cutting = macro_carbo_cutting - (macro_carbo_30porcento * 2) 
+    macro_comer3 = (macro_carbo_30porcento / alimentos[1][-1][3]) * 100
+    macro_60 = macro_carbo_30porcento * 2
+    macro2_proteina = (alimentos[0][-1][1] / 100) * macro_comer2
+    macro3_proteina = (alimentos[1][-1][1] / 100) * macro_comer3
+    macro4_proteina = macro2_proteina + macro3_proteina
+    alimentos_soma = alimentos[0][-1][1] + alimentos[1][-1][1]
+    macro_proteina_cutting_novo.append(macro_proteina_bulking) 
+    macro_proteina_restante_aser_usada = macro_proteina_bulking - macro4_proteina
+    proteina_comer = (macro_proteina_restante_aser_usada / proteina_usar) * 100
+    restante_proteina_comer = proteina_comer
+    carboidratos_das_proteinas = (alimentos[2][-1][3] / 100) * restante_proteina_comer     
+   # print(f' {macro_comer2:.2f}G de {alimentos[0][-1][0] }\n {macro_comer3:.2f}G de {alimentos[1][-1][0]} \n total de {macro_60:.2F}G de CARBO e {macro4_proteina:.2F}G de PROTEINA. (DIA) \n ------PROTEINA----- \n{restante_proteina_comer:.2f}G de {alimento_selecionado} para completar {macro_proteina_restante_aser_usada:.2f}G de PROTEINAS. ')
+   # print(f'Ou {math.ceil(proteina_comer/50)} ovos brancos grande.\n' if permissao_usar == True else '',end='')
+   # print(f'Tiveram {carboidratos_das_proteinas:.2f}G de carbo das proteinas usadas.\n portanto você devera " queimar " com cardio.')
+    carboidratos_comer = (macro_carbo_cutting / carboidratos_usar) * 100
+    ajuste_de_carbo2 = macro_carbo_cutting -  carboidratos_das_proteinas
+    
+    ajuster_de_carbo2_copia = list()
+    ajuster_de_carbo2_copia.append(ajuste_de_carbo2)
+    if ajuste_de_carbo2 <0:
+        ajuste_de_carbo2 = ajuste_de_carbo2 - ajuste_de_carbo2 - ajuste_de_carbo2 
+    ajuster_de_carbo = (ajuste_de_carbo2 / 100) * 50
+   # print(F'Voce deve comer {macro_comer2} g de tao alimento agora e {macro_comer3} de outro agora')
+    if ajuster_de_carbo2_copia[-1] >0:
+        macro_carbo_30porcento = macro_carbo_30porcento + ajuster_de_carbo
+        macro_comer3 = (macro_carbo_30porcento / alimentos[1][-1][3]) * 100
+        macro_comer2 = (macro_carbo_30porcento / (alimentos)[0][-1][3]) * 100
+        macro_60 = macro_carbo_30porcento * 2
+        macro_carbo_cutting = macro_carbo_cutting_novo[-1] - (macro_carbo_30porcento * 2) 
+     #   print(F'Agora vai comer {macro_comer2} de x alimento e {macro_comer3} de outro.')
+
+
+
+
+    elif ajuster_de_carbo2_copia[-1] <0:
+        if ajuster_de_carbo > macro_carbo_30porcento:
+            macro_carbo_30porcento = (macro_carbo_30porcento * 2 ) - ajuster_de_carbo 
+            
+            print(f'Muito carbo, tivemos que diminuir  {ajuster_de_carbo}g de carbo, ficando {macro_carbo_30porcento}   1')
+            print('Essa parte do codigo ainda estamos desenvolvendo, pode não funcionar muito bem.. \n sao muitos detalhes..')
+
+        elif macro_carbo_30porcento > ajuster_de_carbo:
+            macro_carbo_30porcento = macro_carbo_30porcento - ajuster_de_carbo
+            print(f'Muito carbo, tivemos que diminuir  {ajuster_de_carbo}g de carbo, ficando {macro_carbo_30porcento}   2')
+            print('Essa parte do codigo ainda estamos desenvolvendo, pode não funcionar muito bem.. \n sao muitos detalhes..')
+
+
+    macro2_proteina = (alimentos[0][-1][1] / 100) * macro_comer2
+    macro3_proteina = (alimentos[1][-1][1] / 100) * macro_comer3
+
+    dez_porcento_do_macro_carbo_cutting = (macro_carbo_cutting_novo[-1] / 100) * 20
+    
+    print(f' Você deverar comer o seguintes alimentos nas seguintes quantidades: \n          =======CARBOIDRATOS======= \n [45% do seu macro diario nos 2 primeiros alimentos.]\n [10% ({dez_porcento_do_macro_carbo_cutting}) sera reservado para o alimento proteito.] \n [caso o alimento proteito não alcance esses 10%,] \n [sera adicionado aos alimentos de carboidratos oque restar.] \n{macro_comer2:.2f}G de {alimentos[0][-1][0] } = {macro_carbo_30porcento:.2f}g CARBO (45% do seu macro diario)..  {macro2_proteina:.2f}G de PROTEINA  \n {macro_comer3:.2f}G de {alimentos[1][-1][0]} = {macro_carbo_30porcento:.2f}g CARBO (45% do seu macro diario).. {macro3_proteina:.2f}g de PROTEINA \n total de {macro_60:.2F}G de CARBO e {macro4_proteina:.2F}G de PROTEINA. (DIA) \n ------PROTEINA----- \n{restante_proteina_comer:.2f}G de {alimento_selecionado} para completar {macro_proteina_restante_aser_usada:.2f}G de PROTEINAS. ')
+    print(f'Ou {math.ceil(proteina_comer/50)} ovos brancos grande.\n' if permissao_usar == True else '',end='')
+   #print(f'Tiveram {carboidratos_das_proteinas:.2f}G de carbo das proteinas usadas.\n portanto você devera " queimar " com cardio.')
+
+
+    #print(f'Sobraram {macro_carbo_cutting} de carbo para voce comer de {macro_carbo_cutting_novo}.\n sobrou {ajuste_de_carbo2} para ti comer. ja subtraismos o carbo da proteina com esse.')
+    #ajuste_de_carbo = (macro_carbo_cutting / 100)
+
+if objetivo =='1':
+        macro_carbo_cutting_novo.append(macro_carbo_bulking) 
+        macro_carbo_30porcento = (macro_carbo_bulking / 100) * 45
+        macro_comer2 = (macro_carbo_30porcento / (alimentos)[0][-1][3]) * 100
+        macro_carbo_bulking = macro_carbo_bulking - (macro_carbo_30porcento * 2) 
+        macro_comer3 = (macro_carbo_30porcento / alimentos[1][-1][3]) * 100
+        macro_60 = macro_carbo_30porcento * 2
+        macro2_proteina = (alimentos[0][-1][1] / 100) * macro_comer2
+        macro3_proteina = (alimentos[1][-1][1] / 100) * macro_comer3
+        macro4_proteina = macro2_proteina + macro3_proteina
+        alimentos_soma = alimentos[0][-1][1] + alimentos[1][-1][1]
+        macro_proteina_cutting_novo.append(macro_proteina_bulking)          
+        macro_proteina_restante_aser_usada = macro_proteina_bulking - macro4_proteina
+        proteina_comer = (macro_proteina_restante_aser_usada / proteina_usar) * 100
+        restante_proteina_comer = proteina_comer 
+        carboidratos_das_proteinas = (alimentos[2][-1][3] / 100) * restante_proteina_comer  
+        carboidratos_comer = (macro_carbo_bulking / carboidratos_usar) * 100
+        ajuste_de_carbo2 = macro_carbo_bulking -  carboidratos_das_proteinas
+    
+        ajuster_de_carbo2_copia = list()
+        ajuster_de_carbo2_copia.append(ajuste_de_carbo2)
+        if ajuste_de_carbo2 <0:
+            ajuste_de_carbo2 = ajuste_de_carbo2 - ajuste_de_carbo2 - ajuste_de_carbo2 
+        ajuster_de_carbo = (ajuste_de_carbo2 / 100) * 50
+      # print(F'Voce deve comer {macro_comer2} g de tao alimento agora e {macro_comer3} de outro agora')
+        if ajuster_de_carbo2_copia[-1] >0:
+            macro_carbo_30porcento = macro_carbo_30porcento + ajuster_de_carbo
+            macro_comer3 = (macro_carbo_30porcento / alimentos[1][-1][3]) * 100
+            macro_comer2 = (macro_carbo_30porcento / (alimentos)[0][-1][3]) * 100
+            macro_60 = macro_carbo_30porcento * 2
+            macro_carbo_cutting = macro_carbo_cutting_novo[-1] - (macro_carbo_30porcento * 2) 
+     #   print(F'Agora vai comer {macro_comer2} de x alimento e {macro_comer3} de outro.')
+
+
+
+
+        elif ajuster_de_carbo2_copia[-1] <0:
+            if ajuster_de_carbo > macro_carbo_30porcento:
+                macro_carbo_30porcento = (macro_carbo_30porcento * 2 ) - ajuster_de_carbo 
+                
+                print(f'Muito carbo, tivemos que diminuir  {ajuster_de_carbo}g de carbo, ficando {macro_carbo_30porcento}   1')
+                print('Essa parte do codigo ainda estamos desenvolvendo, pode não funcionar muito bem.. \n sao muitos detalhes..')
+
+            elif macro_carbo_30porcento > ajuster_de_carbo:
+                macro_carbo_30porcento = macro_carbo_30porcento - ajuster_de_carbo
+                print(f'Muito carbo, tivemos que diminuir  {ajuster_de_carbo}g de carbo, ficando {macro_carbo_30porcento}   2')
+                print('Essa parte do codigo ainda estamos desenvolvendo, pode não funcionar muito bem.. \n sao muitos detalhes..')
+
+
+        macro2_proteina = (alimentos[0][-1][1] / 100) * macro_comer2
+        macro3_proteina = (alimentos[1][-1][1] / 100) * macro_comer3
+
+        dez_porcento_do_macro_carbo_cutting = (macro_carbo_cutting_novo[-1] / 100) * 20   
+
+
+       
+        print(f' Você deverar comer o seguintes alimentos nas seguintes quantidades: \n          =======CARBOIDRATOS======= \n [45% do seu macro diario nos 2 primeiros alimentos.]\n [10% ({dez_porcento_do_macro_carbo_cutting}) sera reservado para o alimento proteito.] \n [caso o alimento proteito não alcance esses 10%,] \n [sera adicionado aos alimentos de carboidratos oque restar.] \n{macro_comer2:.2f}G de {alimentos[0][-1][0] } = {macro_carbo_30porcento:.2f}g CARBO (45% do seu macro diario)..  {macro2_proteina:.2f}G de PROTEINA  \n {macro_comer3:.2f}G de {alimentos[1][-1][0]} = {macro_carbo_30porcento:.2f}g CARBO (45% do seu macro diario).. {macro3_proteina:.2f}g de PROTEINA \n total de {macro_60:.2F}G de CARBO e {macro4_proteina:.2F}G de PROTEINA. (DIA) \n ------PROTEINA----- \n{restante_proteina_comer:.2f}G de {alimento_selecionado} para completar {macro_proteina_restante_aser_usada:.2f}G de PROTEINAS. ')
+        print(f'Ou {math.ceil(proteina_comer/50)} ovos brancos grande.\n' if permissao_usar == True else '',end='')
+       
+        # proteina que quer saber / 100 = a cada 100 tem essa quantidade
+        
+        # resultado x quantidade de g que deseja saber
+#print(dieta_defora)
+feito por Luiz Otávio. Todos os direitos reservados a min
